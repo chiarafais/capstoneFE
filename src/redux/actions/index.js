@@ -1,0 +1,95 @@
+import Swal from "sweetalert2";
+
+export const DO_LOGIN = "DO_LOGIN";
+export const GET_USER_INFO = "GET_USER_INFO";
+
+const url = "http://localhost:3001/";
+
+export const doLogin = (email, password) => {
+  return async (dispatch) => {
+    try {
+      const response = await fetch(url + "auth/login", {
+        method: "POST",
+        body: JSON.stringify({
+          email: email,
+          password: password,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        localStorage.setItem("tkn", data.tokenId);
+        dispatch(getMyProfile());
+        dispatch({ type: DO_LOGIN, payload: data.tokenId });
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Welcome back!",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      } else {
+        throw new Error("Errore nella fetch login");
+      }
+    } catch (err) {
+      console.log("errror", err);
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "Login failed!",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
+  };
+};
+
+export const getAllBeaches = () => {
+  return async (dispatch) => {
+    try {
+      const response = await fetch(url + "beach", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MjIwOTY1NTQsImV4cCI6MTcyMjcwMTM1NCwic3ViIjoiMSJ9.Jw1QhbPvcPHptsx6RMlpx4qdpFKarc1hnjtbv14uIQk",
+        },
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+      } else {
+        throw new Error("Errore nella fetch login");
+      }
+    } catch (err) {
+      console.log("errror", err);
+    }
+  };
+};
+
+export const getMyProfile = () => {
+  return async (dispatch) => {
+    try {
+      const response = await fetch(url + "users/me", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("tkn"),
+        },
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        dispatch({ type: GET_USER_INFO, payload: data });
+      } else {
+        throw new Error("Errore nella fetch login");
+      }
+    } catch (err) {
+      localStorage.clear("tkn");
+      console.log("errror", err);
+    }
+  };
+};
