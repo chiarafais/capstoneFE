@@ -2,6 +2,7 @@ import Swal from "sweetalert2";
 
 export const DO_LOGIN = "DO_LOGIN";
 export const GET_USER_INFO = "GET_USER_INFO";
+export const GET_ALL_BEACHES = "GET_ALL_BEACHES";
 
 const url = "http://localhost:3001/";
 
@@ -61,8 +62,9 @@ export const getAllBeaches = () => {
 
       if (response.ok) {
         const data = await response.json();
+        dispatch({ type: GET_ALL_BEACHES, payload: data.content });
       } else {
-        throw new Error("Errore nella fetch login");
+        throw new Error("Errore nella fetch beach");
       }
     } catch (err) {
       console.log("errror", err);
