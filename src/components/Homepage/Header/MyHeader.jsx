@@ -15,7 +15,8 @@ const MyHeader = () => {
           </div>
           <div>
             <Row className="py-4">
-              <Col xs={8} md={4} className="mx-auto my-2">
+              <Col md={2}></Col>
+              <Col xs={8} md={2} className="mx-auto my-2">
                 <Form.Select>
                   <option disabled defaultValue>
                     Beaches
@@ -25,7 +26,7 @@ const MyHeader = () => {
                   <option value="3">Three</option>
                 </Form.Select>
               </Col>
-              <Col xs={8} md={4} className="mx-auto my-2">
+              <Col xs={8} md={3} className="mx-auto my-2">
                 <Form.Control type="date" />
               </Col>
               <Col xs={8} md={2} className="mx-auto my-2">
@@ -40,7 +41,7 @@ const MyHeader = () => {
                   <option value="5">5</option>
                 </Form.Select>
               </Col>
-              <Col xs={8} md={2} className="mx-auto my-2 text-center">
+              <Col xs={8} md={3} className="mx-auto my-2">
                 <Button className="btn-reserve">RESERVE</Button>
               </Col>
             </Row>

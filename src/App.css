@@ -106,8 +106,8 @@
   input {
     border: none;
     border-radius: 2px;
-    max-width: 80%;
-    margin: auto;
+    /* max-width: 80%;
+    margin: auto; */
   }
   select:focus,
   input:focus {
