@@ -132,12 +132,25 @@ export const updateMyProfile = (profile) => {
       if (response.ok) {
         const data = await response.json();
         dispatch({ type: GET_USER_INFO, payload: data });
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Edit done!",
+          showConfirmButton: false,
+          timer: 1500,
+        });
       } else {
         throw new Error("Errore nella fetch login");
       }
     } catch (err) {
-      localStorage.clear("tkn");
       console.log("errror", err);
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "Edit profile failed!",
+        showConfirmButton: false,
+        timer: 1500,
+      });
     }
   };
 };
@@ -147,5 +160,40 @@ export const doLogout = () => {
     localStorage.removeItem("tkn");
     dispatch({ type: DO_LOGIN, payload: "" });
     dispatch({ type: GET_USER_INFO, payload: "" });
+  };
+};
+
+export const newUser = (user) => {
+  return async () => {
+    try {
+      const response = await fetch(url + "auth/register", {
+        method: "POST",
+        body: JSON.stringify(user),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (response.ok) {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Registration done!",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      } else {
+        throw new Error("Errore nella fetch login");
+      }
+    } catch (err) {
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "Registration failed!",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      console.log("errror", err);
+    }
   };
 };

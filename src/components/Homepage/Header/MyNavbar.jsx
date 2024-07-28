@@ -4,10 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { DO_LOGIN, doLogout, getMyProfile, updateMyProfile } from "../../../redux/actions";
 import MyLoginModal from "./MyLoginModal";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
+import MyRegModal from "./MyRegModal";
 
 const MyNavbar = () => {
   const dispatch = useDispatch();
   const [modalLoginShow, setModalLoginShow] = useState(false);
+  const [modalRegShow, setModalRegShow] = useState(false);
   const [updateProfile, setUpdateProfile] = useState(false);
 
   const token = useSelector((state) => state.login.results);
@@ -40,13 +42,13 @@ const MyNavbar = () => {
     <>
       <Container fluid>
         <Row className="pt-3 pb-3">
-          <Col xs={4}>
-            <div>
+          <Col xs={12} sm={4}>
+            <div className="text-center text-sm-start my-3 my-sm-0">
               <img src="/src/assets/logo_sardegna.png" alt="" className="logo_sardegna" />
             </div>
           </Col>
 
-          <Col xs={4}>
+          <Col xs={6} sm={4}>
             {userInfo && (
               <div className="text-center">
                 <Button className=" button-your-reservation">YOUR RESERVATION</Button>
@@ -54,10 +56,10 @@ const MyNavbar = () => {
             )}
           </Col>
 
-          <Col xs={4}>
+          <Col xs={6} sm={4}>
             {!token && (
               <div className="text-end zona-bottoni">
-                <button>Register</button>
+                <button onClick={() => setModalRegShow(true)}>Register</button>
                 <button className="mx-3" onClick={() => setModalLoginShow(true)}>
                   Login
                 </button>
@@ -147,6 +149,7 @@ const MyNavbar = () => {
             )}
           </Col>
         </Row>
+        <MyRegModal show={modalRegShow} onHide={() => setModalRegShow(false)} />
         <MyLoginModal show={modalLoginShow} onHide={() => setModalLoginShow(false)} />
       </Container>
     </>

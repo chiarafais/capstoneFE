@@ -67,7 +67,7 @@ const MyHeader = () => {
                     <option value="5">5</option>
                   </Form.Select>
                 </Col>
-                <Col xs={8} md={3} className="mx-auto my-2">
+                <Col xs={8} md={3} className="mx-auto text-center text-md-start my-2">
                   <Button className="btn-reserve" type="submit">
                     RESERVE
                   </Button>
