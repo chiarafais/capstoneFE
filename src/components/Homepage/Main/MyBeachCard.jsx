@@ -1,4 +1,4 @@
-import { Button, Card, Col, Container } from "react-bootstrap";
+import { Button, Card, Col } from "react-bootstrap";
 
 const MyBeachCard = (props) => {
   return (

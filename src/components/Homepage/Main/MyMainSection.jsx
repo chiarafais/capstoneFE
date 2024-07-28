@@ -18,6 +18,7 @@ const MyMainSection = () => {
           <div className="text-center">
             <h5 className="py-3">SEE ALL BEACH WITH CLOSED NUMBER </h5>
           </div>
+
           <Row>
             <Col xs={4}>
               <MyBeachFilter />
