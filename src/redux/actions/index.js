@@ -197,3 +197,41 @@ export const newUser = (user) => {
     }
   };
 };
+
+export const newReservation = (userId, beachId, date, peopleNum) => {
+  return async () => {
+    try {
+      const response = await fetch(
+        url + `reservation?userId=${userId}&beachId=${beachId}&date=${date}&peopleNum=${peopleNum}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + localStorage.getItem("tkn"),
+          },
+        }
+      );
+
+      if (response.ok) {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Reservation successful!",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      } else {
+        throw new Error("Errore nella fetch login");
+      }
+    } catch (err) {
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "Reservation failed!",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      console.log("errror", err);
+    }
+  };
+};

@@ -3,7 +3,8 @@ import MyNavbar from "./MyNavbar";
 import Form from "react-bootstrap/Form";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { getAllBeaches } from "../../../redux/actions";
+import { getAllBeaches, newReservation } from "../../../redux/actions";
+import Swal from "sweetalert2";
 
 const MyHeader = () => {
   const dispatch = useDispatch();
@@ -12,11 +13,28 @@ const MyHeader = () => {
   const [selectedPeople, setSelectedPeople] = useState("");
   const [selectedDate, setSelectedDate] = useState("");
 
+  const userInfo = useSelector((state) => state.profile.results);
+
   const handleReservation = (event) => {
     event.preventDefault();
-    console.debug(selectedBeach);
-    console.debug(selectedPeople);
-    console.debug(selectedDate);
+    if (userInfo) {
+      if (selectedBeach && selectedPeople && selectedDate) {
+        dispatch(newReservation(userInfo.id, selectedBeach, selectedDate, selectedPeople));
+        setSelectedBeach("");
+        setSelectedPeople("");
+        setSelectedDate("");
+      } else {
+        Swal.fire({
+          text: "All fields are required",
+          icon: "warning",
+        });
+      }
+    } else {
+      Swal.fire({
+        text: "To reservate you need to be logged in",
+        icon: "warning",
+      });
+    }
   };
 
   useEffect(() => {

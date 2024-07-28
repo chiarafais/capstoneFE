@@ -32,6 +32,11 @@ const MyRegModal = (props) => {
       };
 
       dispatch(newUser(user));
+      setName("");
+      setSurname("");
+      setUsername("");
+      setEmail("");
+      setPassword("");
     }
   };
 
