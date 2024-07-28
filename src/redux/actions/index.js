@@ -95,3 +95,26 @@ export const getMyProfile = () => {
     }
   };
 };
+
+export const getRefreshDay = () => {
+  return async (dispatch) => {
+    try {
+      const response = await fetch(url + "reservation/prova", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MjIwOTY1NTQsImV4cCI6MTcyMjcwMTM1NCwic3ViIjoiMSJ9.Jw1QhbPvcPHptsx6RMlpx4qdpFKarc1hnjtbv14uIQk",
+        },
+      });
+
+      if (response.ok) {
+        console.log("data aggiornata correttamente!");
+      } else {
+        throw new Error("Errore nella get per aggiornare la data");
+      }
+    } catch (err) {
+      console.log("errror", err);
+    }
+  };
+};
