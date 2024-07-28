@@ -50,6 +50,45 @@
 
 /* FINE MODALE LOGIN*/
 
+.dropdown-profile-user {
+  .dropdown-menu.show {
+    border-radius: 2px;
+    border: none;
+    padding: 20px 20px 5px 20px;
+    background-color: #f1efec;
+  }
+  .trigger-dropdown {
+    background-color: #819839;
+    border-radius: 2px;
+    border: none;
+  }
+  .btn.show.trigger-dropdown {
+    background-color: #819839 !important;
+  }
+  .trigger-dropdown:active {
+    background-color: #5c6e26 !important;
+    border-radius: 2px;
+    border: none;
+  }
+  .trigger-dropdown:hover {
+    background-color: #5c6e26;
+    border-radius: 2px;
+    border: none;
+  }
+  span.dropdown-profile-label {
+    font-weight: 500;
+    font-size: 0.95em;
+  }
+  .dropdown-item:active,
+  .dropdown-item:hover {
+    color: #212529;
+    background-color: #dcdbd9;
+  }
+  .icon-user-dropdown {
+    font-size: 1.3em;
+  }
+}
+
 /* FINE NAVBAR */
 
 /* INIZIO NAVBAR-LOGGATO */
@@ -63,12 +102,12 @@
   background-color: #a0452e;
 }
 .button-username {
-  background-color: #819839;
+  background-color: #819839 !important;
   border: none;
   border-radius: 2px;
 }
 .button-username:hover {
-  background-color: #5c6e26;
+  background-color: #5c6e26 !important;
 }
 
 /* FINE NAVBAR-LOGGATO */
