@@ -158,9 +158,20 @@ export const updateMyProfile = (profile) => {
 
 export const doLogout = () => {
   return async (dispatch) => {
-    localStorage.removeItem("tkn");
-    dispatch({ type: DO_LOGIN, payload: "" });
-    dispatch({ type: GET_USER_INFO, payload: "" });
+    Swal.fire({
+      title: "Are you sure to logout?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d55a3c",
+      cancelButtonColor: "#1c4175",
+      confirmButtonText: "Logout",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.removeItem("tkn");
+        dispatch({ type: DO_LOGIN, payload: "" });
+        dispatch({ type: GET_USER_INFO, payload: "" });
+      }
+    });
   };
 };
 

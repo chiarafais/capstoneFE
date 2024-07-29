@@ -35,7 +35,7 @@ const MyReservationModal = (props) => {
           <Modal.Body className="grid-example">
             <Container>
               {userReservations && userReservations.length <= 0 && (
-                <p className="text-start fw-bold">You not have reservations at the moment</p>
+                <p className="text-center fw-bold">You don't have reservations at the moment</p>
               )}
               {userReservations &&
                 userReservations.map((reservation) => {
