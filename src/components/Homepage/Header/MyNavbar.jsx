@@ -69,7 +69,7 @@ const MyNavbar = () => {
             {userInfo && (
               <div className="text-end ">
                 <Dropdown as={ButtonGroup} className="dropdown-profile-user" autoClose={false}>
-                  <Button className="button-username">
+                  <Button className="button-username text-uppercase">
                     {userInfo.username}
                     <i className="bi bi-person-circle mx-2"></i>
                   </Button>
