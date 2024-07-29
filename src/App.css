@@ -66,12 +66,12 @@
     background-color: #1c4175 !important;
   }
   .trigger-dropdown:active {
-    background-color: #1c4175 !important;
+    background-color: #2a5da4 !important;
     border-radius: 2px;
     border: none;
   }
   .trigger-dropdown:hover {
-    background-color: #1c4175;
+    background-color: #2a5da4;
     border-radius: 2px;
     border: none;
   }
@@ -107,9 +107,33 @@
   border-radius: 2px;
 }
 .button-username:hover {
-  background-color: #1c4175 !important;
+  background-color: #2a5da4 !important;
 }
 
+.modal-reservation {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #eeeeee;
+  position: relative;
+  p {
+    margin-bottom: 5px;
+    text-align: center;
+  }
+  .btn-delete-reservation {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    color: #d55b3b;
+    cursor: pointer;
+  }
+}
+
+#contained-modal-title-vcenter {
+  width: 100%;
+  text-align: center;
+  color: #d55b3b;
+}
 /* FINE NAVBAR-LOGGATO */
 
 .header-title {
@@ -307,11 +331,20 @@
 }
 /* FINE TOGGLE */
 
-div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
-  border: 0;
-  border-radius: 0.25em;
-  background: initial;
-  background-color: #b24b33 !important;
-  color: #fff;
-  font-size: 1em;
+.swal-confirm-reservation {
+  h5 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  h6 {
+    color: #c18921;
+    margin-bottom: 20px;
+  }
+  span {
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: 400;
+    color: #808080;
+  }
 }

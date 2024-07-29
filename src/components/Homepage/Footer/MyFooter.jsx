@@ -15,9 +15,9 @@ const MyFooter = () => {
               <div className="my-5 text-center" style={{ color: "#f4a000" }}>
                 <p className="text-uppercase">About us</p>
                 <small>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ut rem quaerat quo fugit ipsum sit
-                  in sapiente libero, quibusdam debitis accusamus veritatis animi ducimus at tempore vel distinctio
-                  consectetur.
+                  Sardinia is a magical place where you can find quartz beaches but also pink beaches, a place of
+                  crystal clear sea and wonderful rocks! Respect the place and use our site to book your dream
+                  destination for a day!
                 </small>
               </div>
             </Col>
@@ -39,13 +39,13 @@ const MyFooter = () => {
             </Col>
             <Col xs={6} sm={3}>
               <div className="my-0 my-sm-5 text-center" style={{ color: "#6b810e" }}>
-                <p className="text-uppercase">prova</p>
+                <p className="text-uppercase">developed using</p>
                 <div className="d-flex flex-column">
-                  <small>prova qualcosa</small>
-                  <small>cose lunghe</small>
-                  <small>caso cavolo lunghe cose</small>
-                  <small>non ho idee</small>
-                  <small>idee non ho</small>
+                  <small>React</small>
+                  <small>CSS</small>
+                  <small>JavaScript</small>
+                  <small>Spring</small>
+                  <small>java</small>
                 </div>
               </div>
             </Col>

@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 export const DO_LOGIN = "DO_LOGIN";
 export const GET_USER_INFO = "GET_USER_INFO";
 export const GET_ALL_BEACHES = "GET_ALL_BEACHES";
+export const GET_USER_RESERVATION = "GET_USER_RESERVATION ";
 
 const url = "http://localhost:3001/";
 
@@ -231,6 +232,58 @@ export const newReservation = (userId, beachId, date, peopleNum) => {
         showConfirmButton: false,
         timer: 1500,
       });
+      console.log("errror", err);
+    }
+  };
+};
+
+export const getUserReservation = () => {
+  return async (dispatch) => {
+    try {
+      const response = await fetch(url + "reservation/user", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("tkn"),
+        },
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        dispatch({ type: GET_USER_RESERVATION, payload: data });
+      } else {
+        throw new Error("Errore nella chiamata delle prenotazioni utente");
+      }
+    } catch (err) {
+      console.log("errror", err);
+    }
+  };
+};
+
+export const deleteReservation = (id_prenotazione) => {
+  return async (dispatch) => {
+    try {
+      const response = await fetch(url + "reservation/" + id_prenotazione, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("tkn"),
+        },
+      });
+
+      if (response.ok) {
+        dispatch(getUserReservation());
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Reservation deleted!",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      } else {
+        throw new Error("Errore nella cancellazione della prenotazioni utente");
+      }
+    } catch (err) {
       console.log("errror", err);
     }
   };

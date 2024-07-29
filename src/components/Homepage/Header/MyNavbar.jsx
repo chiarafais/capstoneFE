@@ -1,16 +1,18 @@
 import { Button, Col, Container, Dropdown, Form, Row } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { DO_LOGIN, doLogout, getMyProfile, updateMyProfile } from "../../../redux/actions";
+import { DO_LOGIN, doLogout, getMyProfile, getUserReservation, updateMyProfile } from "../../../redux/actions";
 import MyLoginModal from "./MyLoginModal";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import MyRegModal from "./MyRegModal";
+import MyReservationModal from "./MyReservationModal";
 
 const MyNavbar = () => {
   const dispatch = useDispatch();
   const [modalLoginShow, setModalLoginShow] = useState(false);
   const [modalRegShow, setModalRegShow] = useState(false);
   const [updateProfile, setUpdateProfile] = useState(false);
+  const [modalReservationShow, setModalReservationShow] = useState(false);
 
   const token = useSelector((state) => state.login.results);
   const userInfo = useSelector((state) => state.profile.results);
@@ -18,6 +20,11 @@ const MyNavbar = () => {
   const [username, setUsername] = useState("");
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
+
+  const openReservation = () => {
+    dispatch(getUserReservation());
+    setModalReservationShow(true);
+  };
 
   const handleProfileUpdate = () => {
     setUpdateProfile(false);
@@ -51,7 +58,9 @@ const MyNavbar = () => {
           <Col xs={6} sm={4}>
             {userInfo && (
               <div className="text-center">
-                <Button className=" button-your-reservation">YOUR RESERVATION</Button>
+                <Button className=" button-your-reservation" onClick={() => openReservation()}>
+                  YOUR RESERVATION
+                </Button>
               </div>
             )}
           </Col>
@@ -151,6 +160,7 @@ const MyNavbar = () => {
         </Row>
         <MyRegModal show={modalRegShow} onHide={() => setModalRegShow(false)} />
         <MyLoginModal show={modalLoginShow} onHide={() => setModalLoginShow(false)} />
+        <MyReservationModal show={modalReservationShow} onHide={() => setModalReservationShow(false)} />
       </Container>
     </>
   );

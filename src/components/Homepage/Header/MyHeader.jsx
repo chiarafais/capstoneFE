@@ -19,20 +19,38 @@ const MyHeader = () => {
     event.preventDefault();
     if (userInfo) {
       if (selectedBeach && selectedPeople && selectedDate) {
-        dispatch(newReservation(userInfo.id, selectedBeach, selectedDate, selectedPeople));
-        setSelectedBeach("");
-        setSelectedPeople("");
-        setSelectedDate("");
+        Swal.fire({
+          title: "All correct?",
+          html: `<div class="swal-confirm-reservation"> 
+          <h6>Please double check everything before confirming!</h6>
+          <h5><span>Beach: </span>${
+            beaches.find((x) => x.id === Number(selectedBeach)).name_beach
+          }</h5> <h5><span>Number of people: </span>${selectedPeople}</h5> <h5><span>Reservation date: </span>${selectedDate}</h5></div>`,
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#677c0c",
+          cancelButtonColor: "#d55a3c",
+          confirmButtonText: "Yes, reserve it!",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            dispatch(newReservation(userInfo.id, selectedBeach, selectedDate, selectedPeople));
+            setSelectedBeach("");
+            setSelectedPeople("");
+            setSelectedDate("");
+          }
+        });
       } else {
         Swal.fire({
           text: "All fields are required",
           icon: "warning",
+          confirmButtonColor: "#b24b33",
         });
       }
     } else {
       Swal.fire({
         text: "To reservate you need to be logged in",
         icon: "warning",
+        confirmButtonColor: "#b24b33",
       });
     }
   };
