@@ -247,32 +247,7 @@
   }
 }
 
-/* FINE MAIN */
-
-/* INIZIO FOOTER */
-
-.bg-footer {
-  background-color: #0c1f39;
-
-  h1 {
-    font-family: "Monoton", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 10vw;
-    color: #f1efec;
-  }
-
-  .carosello {
-    max-width: 250px;
-  }
-
-  .logo_sardegna_footer {
-    max-width: 250px;
-  }
-}
-
-/* FINE FOOTER */
-
+/* INIZIO FILTRI */
 /* TOGGLE */
 .switch {
   --button-width: 3.5em;
@@ -330,6 +305,53 @@
   transform: translateX(calc(var(--button-width) - var(--toggle-wider) - var(--button-toggle-offset)));
 }
 /* FINE TOGGLE */
+
+.button-filter-unset,
+.button-filter-unset:hover {
+  font-size: 0.8em;
+  background-color: white;
+  border: 2px solid #1c3f73;
+  border-radius: 18px;
+  color: #1c3f73;
+  font-weight: 600;
+}
+.button-filter-active,
+.button-filter-active:hover {
+  font-size: 0.8em;
+  background-color: #1c3f73;
+  border: 2px solid #1c3f73;
+  border-radius: 18px;
+  color: white;
+  font-weight: 400;
+}
+
+/* FINE FILTRI  */
+
+/* FINE MAIN */
+
+/* INIZIO FOOTER */
+
+.bg-footer {
+  background-color: #0c1f39;
+
+  h1 {
+    font-family: "Monoton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 10vw;
+    color: #f1efec;
+  }
+
+  .carosello {
+    max-width: 250px;
+  }
+
+  .logo_sardegna_footer {
+    max-width: 250px;
+  }
+}
+
+/* FINE FOOTER */
 
 .swal-confirm-reservation {
   h5 {

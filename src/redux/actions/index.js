@@ -299,3 +299,72 @@ export const deleteReservation = (id_prenotazione) => {
     }
   };
 };
+
+export const getBeachEstablishment = () => {
+  return async (dispatch) => {
+    try {
+      const response = await fetch(url + "beach/establishment", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("tkn"),
+        },
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        dispatch({ type: GET_ALL_BEACHES, payload: data });
+      } else {
+        throw new Error("Errore nella chiamata delle spiagge per stabilimento");
+      }
+    } catch (err) {
+      console.log("errror", err);
+    }
+  };
+};
+
+export const getBeachAvailable = () => {
+  return async (dispatch) => {
+    try {
+      const response = await fetch(url + "beach/available", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("tkn"),
+        },
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        dispatch({ type: GET_ALL_BEACHES, payload: data });
+      } else {
+        throw new Error("Errore nella chiamata delle spiagge per disponibili");
+      }
+    } catch (err) {
+      console.log("errror", err);
+    }
+  };
+};
+
+export const getBeachByProvince = (provinceName) => {
+  return async (dispatch) => {
+    try {
+      const response = await fetch(url + "beach/province/" + provinceName, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("tkn"),
+        },
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        dispatch({ type: GET_ALL_BEACHES, payload: data });
+      } else {
+        throw new Error("Errore nella chiamata delle spiagge per provincia");
+      }
+    } catch (err) {
+      console.log("errror", err);
+    }
+  };
+};
