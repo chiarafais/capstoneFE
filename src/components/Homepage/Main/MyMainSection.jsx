@@ -16,7 +16,7 @@ const MyMainSection = () => {
       <div className="main-section">
         <Container fluid>
           <div className="text-center">
-            <h5 className="py-3">SEE ALL BEACH WITH CLOSED NUMBER </h5>
+            <h3 className="py-3 see-all-beach-closed">SEE ALL BEACH WITH CLOSED NUMBER </h3>
           </div>
 
           <Row>
