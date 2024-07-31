@@ -1,9 +1,15 @@
-import { Button, Card, Col } from "react-bootstrap";
+import { Button, Card, Col, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
 const MyBeachCard = (props) => {
+  const token = useSelector((state) => state.login.results);
+
+  const openMaps = (link) => {
+    window.open(link, "_blank");
+  };
   return (
     <>
-      <Col xs={12} lg={6} xl={4}>
+      <Col xs={12} sm={token ? 12 : 6} md={token ? 6 : 6} lg={token ? 6 : 4} xl={token ? 4 : 3} xxl={token ? 3 : 3}>
         <Card>
           <Card.Img className="img-card-beach" variant="top" src={props.props.img_beach} />
           <Card.Body>
@@ -38,6 +44,12 @@ const MyBeachCard = (props) => {
               <Button className="card-details-button">DETAILS</Button>
             </div>
           </Card.Body>
+
+          <OverlayTrigger overlay={<Tooltip id={props.props.id}>Click for maps</Tooltip>}>
+            <span className="icon-position-beach" onClick={() => openMaps(props.props.link_mappe)}>
+              <i className="bi bi-geo-alt-fill"></i>
+            </span>
+          </OverlayTrigger>
         </Card>
       </Col>
     </>

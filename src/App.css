@@ -193,10 +193,10 @@
   background-color: #f9edeb;
 
   .see-all-beach-closed {
-    font-family: "Monoton", sans-serif;
+    /* font-family: "Monoton", sans-serif;
     font-weight: 400;
     font-style: normal;
-    color: #000000;
+    color: #000000; */
   }
   /* INIZIO CARD MAIN */
   .card {
@@ -242,6 +242,22 @@
       border-top-right-radius: 0px;
       border-top-left-radius: 18px;
       font-size: 0.8em;
+    }
+    .icon-position-beach {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 20px;
+      border: 1px solid #1c4175;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: baseline;
+      justify-content: center;
+      height: 30px;
+      width: 30px;
+      color: #e6dbdb;
+      background-color: #1c4175;
+      cursor: pointer;
     }
   }
 

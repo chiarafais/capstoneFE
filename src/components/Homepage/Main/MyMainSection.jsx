@@ -8,6 +8,7 @@ import { useEffect } from "react";
 const MyMainSection = () => {
   const dispatch = useDispatch();
   const beaches = useSelector((state) => state.beach.results);
+  const token = useSelector((state) => state.login.results);
   useEffect(() => {
     dispatch(getAllBeaches());
   }, []);
@@ -18,12 +19,24 @@ const MyMainSection = () => {
           <div className="text-center">
             <h3 className="py-3 see-all-beach-closed">SEE ALL BEACH WITH CLOSED NUMBER </h3>
           </div>
-
-          <Row>
-            <Col xs={4}>
-              <MyBeachFilter />
-            </Col>
-            <Col xs={8}>
+          {token && (
+            <Row>
+              <Col xs={12} sm={5} md={3} lg={3} xl={2}>
+                <MyBeachFilter />
+              </Col>
+              <Col xs={12} sm={7} md={9} lg={9} xl={10}>
+                <Row>
+                  {beaches &&
+                    beaches.length > 0 &&
+                    beaches.map((beach) => {
+                      return <MyBeachCard props={beach} key={beach.id} />;
+                    })}
+                </Row>
+              </Col>
+            </Row>
+          )}
+          {!token && (
+            <Col xs={12}>
               <Row>
                 {beaches &&
                   beaches.length > 0 &&
@@ -32,7 +45,7 @@ const MyMainSection = () => {
                   })}
               </Row>
             </Col>
-          </Row>
+          )}
         </Container>
       </div>
     </>

@@ -69,7 +69,8 @@ const MyBeachFilter = () => {
               </Row>
               <Row>
                 <Card.Subtitle className="mb-2 text-muted">PROVINCE</Card.Subtitle>
-                <Col xs={5}>
+
+                <Col xs={12} className="mb-3">
                   <Button
                     className={province === "Sud Sardegna" ? "button-filter-active" : "button-filter-unset"}
                     onClick={() => filterForProvince("Sud Sardegna")}
@@ -77,7 +78,7 @@ const MyBeachFilter = () => {
                     SUD SARDEGNA
                   </Button>
                 </Col>
-                <Col xs={3}>
+                <Col xs={12} className="mb-3">
                   <Button
                     className={province === "Sassari" ? "button-filter-active" : "button-filter-unset"}
                     onClick={() => filterForProvince("Sassari")}
@@ -85,7 +86,7 @@ const MyBeachFilter = () => {
                     SASSARI
                   </Button>
                 </Col>
-                <Col xs={3}>
+                <Col xs={12} className="mb-3">
                   <Button
                     className={province === "Nuoro" ? "button-filter-active" : "button-filter-unset"}
                     onClick={() => filterForProvince("Nuoro")}
