@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button, Form, Modal } from "react-bootstrap";
+import { Button, Col, Form, Modal, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { editBeach } from "../../redux/actions";
 
@@ -59,131 +59,155 @@ const MyModalEditBeach = (props) => {
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={saveEditBeach}>
-            <Form.Label htmlFor="" className="mt-2">
-              Beach name
-            </Form.Label>
-            <Form.Control
-              type="text"
-              id=""
-              aria-describedby=""
-              value={beachName}
-              onChange={(e) => setBeachName(e.target.value)}
-            />
-
-            <Form.Label htmlFor="" className="mt-2">
-              Comune
-            </Form.Label>
-            <Form.Control
-              type="text"
-              id=""
-              aria-describedby=""
-              value={comune}
-              onChange={(e) => setComune(e.target.value)}
-            />
-
-            <Form.Label htmlFor="" className="mt-2">
-              Province
-            </Form.Label>
-            <Form.Control
-              type="text"
-              id=""
-              aria-describedby=""
-              value={province}
-              onChange={(e) => setProvince(e.target.value)}
-            />
-
-            <Form.Label htmlFor="" className="mt-2">
-              Beach image
-            </Form.Label>
-            <Form.Control
-              type="text"
-              id=""
-              aria-describedby=""
-              value={imgBeach}
-              onChange={(e) => setImgBeach(e.target.value)}
-            />
-
-            <Form.Label htmlFor="" className="mt-2">
-              Maps code link
-            </Form.Label>
-            <Form.Control
-              type="text"
-              id=""
-              aria-describedby=""
-              value={mapsCode}
-              onChange={(e) => setMapsCode(e.target.value)}
-            />
-
-            <Form.Label htmlFor="" className="mt-2">
-              Maps position
-            </Form.Label>
-            <Form.Control
-              type="text"
-              id=""
-              aria-describedby=""
-              value={mapsPosition}
-              onChange={(e) => setMapsPosition(e.target.value)}
-            />
-
-            <Form.Label htmlFor="" className="mt-2">
-              Max number people
-            </Form.Label>
-            <Form.Control
-              type="number"
-              id=""
-              aria-describedby=""
-              value={maxNumber}
-              onChange={(e) => setMaxNumber(e.target.value)}
-            />
-
-            <Form.Label htmlFor="" className="mt-2">
-              Entry price &#40; € &#41;
-            </Form.Label>
-            <Form.Control
-              type="number"
-              id=""
-              aria-describedby=""
-              value={entryprice}
-              onChange={(e) => setEntryprice(e.target.value)}
-            />
-
-            <Form.Label htmlFor="" className="mt-2">
-              Parking price &#40; € &#41;
-            </Form.Label>
-            <Form.Control
-              type="number"
-              id=""
-              aria-describedby=""
-              value={parkingPrice}
-              onChange={(e) => setParkingPrice(e.target.value)}
-            />
-
-            <Form.Label htmlFor="" className="mt-2">
-              Close number?
-            </Form.Label>
-            <Form.Select
-              aria-label="Default select example"
-              value={closeNumber}
-              onChange={(e) => setCloseNumber(e.target.value)}
-            >
-              <option value={true}>True</option>
-              <option value={false}>False</option>
-            </Form.Select>
-
-            <Form.Label htmlFor="" className="mt-2">
-              Establishment?
-            </Form.Label>
-            <Form.Select
-              aria-label="Default select example"
-              value={establishment}
-              onChange={(e) => setEstablishment(e.target.value)}
-            >
-              <option value={true}>True</option>
-              <option value={false}>False</option>
-            </Form.Select>
-            <Button type="submit" onClick={props.onHide}>
-              EDIT BEACH DATA
-            </Button>
+            <Row>
+              <Col xs={12} md={6}>
+                <Form.Label htmlFor="" className="mt-2">
+                  Beach name
+                </Form.Label>
+                <Form.Control
+                  type="text"
+                  id=""
+                  aria-describedby=""
+                  value={beachName}
+                  onChange={(e) => setBeachName(e.target.value)}
+                />
+              </Col>
+              <Col xs={12} md={6}>
+                <Form.Label htmlFor="" className="mt-2">
+                  Beach image
+                </Form.Label>
+                <Form.Control
+                  type="text"
+                  id=""
+                  aria-describedby=""
+                  value={imgBeach}
+                  onChange={(e) => setImgBeach(e.target.value)}
+                />
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={12} md={6}>
+                <Form.Label htmlFor="" className="mt-2">
+                  Comune
+                </Form.Label>
+                <Form.Control
+                  type="text"
+                  id=""
+                  aria-describedby=""
+                  value={comune}
+                  onChange={(e) => setComune(e.target.value)}
+                />
+              </Col>
+              <Col xs={12} md={6}>
+                <Form.Label htmlFor="" className="mt-2">
+                  Province
+                </Form.Label>
+                <Form.Control
+                  type="text"
+                  id=""
+                  aria-describedby=""
+                  value={province}
+                  onChange={(e) => setProvince(e.target.value)}
+                />
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={12} md={6}>
+                <Form.Label htmlFor="" className="mt-2">
+                  Maps code link
+                </Form.Label>
+                <Form.Control
+                  type="text"
+                  id=""
+                  aria-describedby=""
+                  value={mapsCode}
+                  onChange={(e) => setMapsCode(e.target.value)}
+                />
+              </Col>
+              <Col xs={12} md={6}>
+                <Form.Label htmlFor="" className="mt-2">
+                  Maps position
+                </Form.Label>
+                <Form.Control
+                  type="text"
+                  id=""
+                  aria-describedby=""
+                  value={mapsPosition}
+                  onChange={(e) => setMapsPosition(e.target.value)}
+                />
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={12} md={4}>
+                <Form.Label htmlFor="" className="mt-2">
+                  Max number people
+                </Form.Label>
+                <Form.Control
+                  type="number"
+                  id=""
+                  aria-describedby=""
+                  value={maxNumber}
+                  onChange={(e) => setMaxNumber(e.target.value)}
+                />
+              </Col>
+              <Col xs={12} md={4}>
+                <Form.Label htmlFor="" className="mt-2">
+                  Entry price &#40; € &#41;
+                </Form.Label>
+                <Form.Control
+                  type="number"
+                  id=""
+                  aria-describedby=""
+                  value={entryprice}
+                  onChange={(e) => setEntryprice(e.target.value)}
+                />
+              </Col>
+              <Col xs={12} md={4}>
+                <Form.Label htmlFor="" className="mt-2">
+                  Parking price &#40; € &#41;
+                </Form.Label>
+                <Form.Control
+                  type="number"
+                  id=""
+                  aria-describedby=""
+                  value={parkingPrice}
+                  onChange={(e) => setParkingPrice(e.target.value)}
+                />
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={12} md={6}>
+                <Form.Label htmlFor="" className="mt-2">
+                  Close number?
+                </Form.Label>
+                <Form.Select
+                  aria-label="Default select example"
+                  value={closeNumber}
+                  onChange={(e) => setCloseNumber(e.target.value)}
+                >
+                  <option value={true}>True</option>
+                  <option value={false}>False</option>
+                </Form.Select>
+              </Col>
+              <Col xs={12} md={6}>
+                <Form.Label htmlFor="" className="mt-2">
+                  Establishment?
+                </Form.Label>
+                <Form.Select
+                  aria-label="Default select example"
+                  value={establishment}
+                  onChange={(e) => setEstablishment(e.target.value)}
+                >
+                  <option value={true}>True</option>
+                  <option value={false}>False</option>
+                </Form.Select>
+              </Col>
+            </Row>
+            <div className="text-center mt-4 mb-2">
+              <Button type="submit" onClick={props.onHide} className="btn-edit-beach">
+                EDIT BEACH DATA
+              </Button>
+            </div>
           </Form>
         </Modal.Body>
       </Modal>

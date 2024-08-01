@@ -534,3 +534,58 @@
   height: 100vh;
   background-color: #f4a00029;
 }
+/* MODAL BEACH*/
+.btn-new-beach,
+.btn-new-beach:hover {
+  background-color: #6b810e;
+  border: none;
+  color: white;
+  border-radius: 2px;
+}
+
+.btn-edit-beach,
+.btn-edit-beach:hover {
+  background-color: #f4a000;
+  border: none;
+  color: white;
+  border-radius: 2px;
+}
+/* MODAL BEACH*/
+
+.table-beaches {
+  th {
+    background-color: #34609d;
+    border: 1px solid white;
+    color: white !important;
+    font-weight: 400;
+    text-transform: capitalize;
+  }
+}
+.table-users {
+  th {
+    background-color: #6b810e;
+    border: 1px solid white;
+    color: white !important;
+    font-weight: 400;
+    text-transform: capitalize;
+  }
+}
+
+.table-reservations {
+  th {
+    background-color: #e4662d;
+    border: 1px solid white;
+    color: white !important;
+    font-weight: 400;
+    text-transform: capitalize;
+  }
+}
+
+.btn-delete {
+  font-size: 21px;
+  color: #d4490b;
+}
+.btn-edit {
+  font-size: 20px;
+  color: #c48002;
+}

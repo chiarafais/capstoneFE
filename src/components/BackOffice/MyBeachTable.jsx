@@ -36,7 +36,7 @@ const MyBeachTable = (props) => {
 
   return (
     <>
-      <Table bordered hover size="sm">
+      <Table bordered hover size="sm" className="table-beaches">
         <thead>
           <tr>
             <th>id</th>
@@ -67,10 +67,10 @@ const MyBeachTable = (props) => {
                   <td>{item.price_entry}</td>
                   <td>{item.price_parking}</td>
                   <td className="text-center" onClick={() => deleteBea(item.id)}>
-                    <i className="bi bi-trash3-fill"></i>
+                    <i className="bi bi-trash3-fill btn-delete"></i>
                   </td>
                   <td onClick={() => editSingleBeach(item)}>
-                    <i className="bi bi-pencil-fill"></i>
+                    <i className="bi bi-pencil-fill btn-edit"></i>
                   </td>
                 </tr>
               );

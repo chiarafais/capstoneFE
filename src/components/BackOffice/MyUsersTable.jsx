@@ -25,7 +25,7 @@ const MyUsersTable = (props) => {
 
   return (
     <>
-      <Table bordered hover size="sm">
+      <Table bordered hover size="sm" className="table-users">
         <thead>
           <tr>
             <th>id</th>
@@ -51,7 +51,7 @@ const MyUsersTable = (props) => {
                   <td>{item.role}</td>
                   <td>{String(item.enabled)}</td>
                   <td className="text-center" onClick={() => deleteUtente(item.id)}>
-                    <i className="bi bi-trash3-fill"></i>
+                    <i className="bi bi-trash3-fill btn-delete"></i>
                   </td>
                 </tr>
               );

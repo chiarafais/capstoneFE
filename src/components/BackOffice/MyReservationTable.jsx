@@ -25,7 +25,7 @@ const MyReservationTable = (props) => {
 
   return (
     <>
-      <Table bordered hover size="sm">
+      <Table bordered hover size="sm" className="table-reservations">
         <thead>
           <tr>
             <th>reservation id</th>
@@ -49,7 +49,7 @@ const MyReservationTable = (props) => {
                   <td>{item.dateEnd}</td>
                   <td>{item.peopleNumber}</td>
                   <td className="text-center" onClick={() => deleteRes(item.id)}>
-                    <i className="bi bi-trash3-fill"></i>
+                    <i className="bi bi-trash3-fill btn-delete"></i>
                   </td>
                 </tr>
               );
