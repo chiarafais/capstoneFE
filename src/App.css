@@ -9,6 +9,9 @@
   font-style: normal;
 }
 
+.modal-content {
+  border-radius: 2px;
+}
 /* INIZIO HEADER */
 
 /* INIZIO NAVBAR */
@@ -269,6 +272,42 @@
   }
 }
 
+.button-close-modal-detail {
+  border: none;
+  border-radius: 0;
+  border-top-left-radius: 18px;
+  background-color: #1c3f73;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  position: absolute;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.modal-dialog.modal-90w {
+  max-width: none !important;
+  width: 90%;
+  img {
+    width: 100%;
+  }
+  #contained-modal-title-vcenter {
+  }
+  .detail-modal {
+    border: 0;
+    border-radius: 15px;
+    width: 100%;
+    p {
+      font-weight: 400;
+      color: #7d7c7c;
+    }
+    span {
+      margin-left: 10px;
+      color: #1c3f73;
+      font-weight: 500;
+    }
+  }
+}
+
 /* INIZIO FILTRI */
 /* TOGGLE */
 .switch {
@@ -391,4 +430,107 @@
     font-weight: 400;
     color: #808080;
   }
+}
+
+/* ------------------------------------------------------------------------ BACK OFFICE  ------------------------------------------------------------------------  */
+
+.navbar-back-bg {
+  background-image: url(assets/bg_home.avif);
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+  .logo_sardegna_back {
+    width: 30%;
+  }
+  .btn-logout {
+    border-radius: 2px;
+    background-color: #f4a000;
+    border: none;
+  }
+  .btn-logout:hover {
+    background-color: #c18921;
+  }
+}
+
+.container-main-back {
+  height: 100vh;
+  background-color: #f4a00029;
+  .card-back {
+    margin-top: 50px;
+    width: 90%;
+    margin-inline: auto;
+    color: white;
+    padding: 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: 0 4px 30px rgb(0 0 0 / 31%);
+    h2 {
+      text-align: center;
+      border-bottom: 1px solid white;
+      padding-bottom: 10px;
+    }
+    div {
+      padding-top: 15px;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-around;
+    }
+    span {
+      margin-inline: 20px;
+    }
+  }
+  .green {
+    background-color: #849639;
+  }
+  .green:hover {
+    background-color: #728234;
+  }
+  .red {
+    background-color: #e4662d;
+  }
+  .red:hover {
+    background-color: #cb5c28;
+  }
+  .blue {
+    background-color: #34609d;
+  }
+  .blue:hover {
+    background-color: #30558a;
+  }
+  .card-back:hover {
+    scale: 1.1;
+  }
+}
+.back-btn {
+  height: 50px;
+  width: 50px;
+
+  font-size: 35px;
+  color: #6b810e;
+  display: inline;
+  cursor: pointer;
+  padding: 20px;
+}
+.back-btn-blue {
+  height: 50px;
+  width: 50px;
+
+  font-size: 35px;
+  color: #34609d;
+  display: inline;
+  cursor: pointer;
+  padding: 20px;
+}
+.back-btn-red {
+  height: 50px;
+  width: 50px;
+  font-size: 35px;
+  padding: 20px;
+  color: #e4662d;
+  display: inline;
+  cursor: pointer;
+}
+.bg-light-yellow {
+  height: 100vh;
+  background-color: #f4a00029;
 }

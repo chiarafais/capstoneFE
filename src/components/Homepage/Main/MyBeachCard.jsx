@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { Button, Card, Col, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { useSelector } from "react-redux";
+import MyDetailCardModal from "./MyDetailCardModal";
 
 const MyBeachCard = (props) => {
   const token = useSelector((state) => state.login.results);
+  const [modalDetailshow, setModalDetailShow] = useState(false);
 
   const openMaps = (link) => {
     window.open(link, "_blank");
@@ -41,7 +44,9 @@ const MyBeachCard = (props) => {
                 </div>
               </div>
 
-              <Button className="card-details-button">DETAILS</Button>
+              <Button className="card-details-button" onClick={() => setModalDetailShow(true)}>
+                DETAILS
+              </Button>
             </div>
           </Card.Body>
 
@@ -52,6 +57,7 @@ const MyBeachCard = (props) => {
           </OverlayTrigger>
         </Card>
       </Col>
+      <MyDetailCardModal show={modalDetailshow} onHide={() => setModalDetailShow(false)} beachinfo={props.props} />
     </>
   );
 };
