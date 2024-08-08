@@ -109,7 +109,7 @@ export const getRefreshDay = () => {
         headers: {
           "Content-Type": "application/json",
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MjIwOTY1NTQsImV4cCI6MTcyMjcwMTM1NCwic3ViIjoiMSJ9.Jw1QhbPvcPHptsx6RMlpx4qdpFKarc1hnjtbv14uIQk",
+            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MjI5NzkzOTAsImV4cCI6MTcyMzU4NDE5MCwic3ViIjoiMSJ9.eLqFq7gtt2f7Gak95sjCoNeM-SmD4Gan_vM0PPNwOhc",
         },
       });
 
