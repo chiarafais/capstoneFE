@@ -108,8 +108,6 @@ export const getRefreshDay = () => {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MjI5NzkzOTAsImV4cCI6MTcyMzU4NDE5MCwic3ViIjoiMSJ9.eLqFq7gtt2f7Gak95sjCoNeM-SmD4Gan_vM0PPNwOhc",
         },
       });
 
