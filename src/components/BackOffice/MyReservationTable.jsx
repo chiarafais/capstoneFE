@@ -25,7 +25,7 @@ const MyReservationTable = (props) => {
 
   return (
     <>
-      <Table bordered hover size="sm" className="table-reservations">
+      <Table responsive bordered hover size="sm" className="table-reservations">
         <thead>
           <tr>
             <th>reservation id</th>

@@ -36,7 +36,7 @@ const MyBeachTable = (props) => {
 
   return (
     <>
-      <Table bordered hover size="sm" className="table-beaches">
+      <Table responsive bordered hover size="sm" className="table-beaches">
         <thead>
           <tr>
             <th>id</th>

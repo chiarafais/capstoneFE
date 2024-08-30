@@ -7,7 +7,7 @@ function MyMainBack() {
     <>
       <Container fluid className="container-main-back">
         <Row>
-          <Col xs={4}>
+          <Col xs={12} md={6} lg={4}>
             <div className="card-back green" onClick={() => navigate("users")}>
               <h2>USERS</h2>
               <div>
@@ -18,7 +18,7 @@ function MyMainBack() {
               </div>
             </div>
           </Col>
-          <Col xs={4}>
+          <Col xs={12} md={6} lg={4}>
             <div className="card-back red" onClick={() => navigate("reservation")}>
               <h2>RESERVATIONS</h2>
               <div>
@@ -30,7 +30,7 @@ function MyMainBack() {
               </div>
             </div>
           </Col>
-          <Col xs={4}>
+          <Col xs={12} md={6} lg={4}>
             <div className="card-back blue" onClick={() => navigate("beach")}>
               <h2>BEACHES</h2>
               <div>

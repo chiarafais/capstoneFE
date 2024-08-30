@@ -25,7 +25,7 @@ const MyUsersTable = (props) => {
 
   return (
     <>
-      <Table bordered hover size="sm" className="table-users">
+      <Table responsive bordered hover size="sm" className="table-users">
         <thead>
           <tr>
             <th>id</th>
